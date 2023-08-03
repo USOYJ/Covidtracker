@@ -1,9 +1,8 @@
-var db = require('../models');
+//var db = require('../models');
 
 module.exports = function(app) {
- 
+
   require('./childApiRoutes')(app);
-  require('./parentApiRoutes')(app);
   require('./forms')(app);
   require('./scheduleRoutes')(app);
   require('./mainroutes')(app);

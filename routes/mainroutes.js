@@ -13,11 +13,11 @@ module.exports = function(app) {
 
   app.get('/childprofile/:id', function(req, res) {
     db.Child.findOne({
-			where:{id:req.params.id},
-			include: [db.Schedule]
+      where:{id:req.params.id},
+      include: [db.Schedule]
     }).then(function(dbChild) {
-			res.render("childprofile",{child:dbChild,days:dbChild.Schedule});
-			//res.json(dbChild.Schedule);
+      res.render('childprofile',{child:dbChild,days:dbChild.Schedule});
+      //res.json(dbChild.Schedule);
     });
   });
 };

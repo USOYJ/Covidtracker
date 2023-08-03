@@ -25,23 +25,23 @@ module.exports = function(app) {
 
   //update child
   app.post('/api/schedule/:childid', function(req, res) {
-		var theSchedule = {};
-		theSchedule.ChildId = req.params.childid;
-		var days = ["monday","tuesday","wednesday","thursday","friday"];
-		for (var i=0; i <days.length;i++){
-			if (days[i] in req.body){
-				if(req.body[days[i]] === 'on') {theSchedule[days[i]] = true;
-				}
-			}
-			else{
-				theSchedule[days[i]] = false;
-			}
-		}
+    var theSchedule = {};
+    theSchedule.ChildId = req.params.childid;
+    var days = ['monday','tuesday','wednesday','thursday','friday'];
+    for (var i=0; i <days.length;i++){
+      if (days[i] in req.body){
+        if(req.body[days[i]] === 'on') {
+          theSchedule[days[i]] = true;
+        }
+      } else{
+        theSchedule[days[i]] = false;
+      }
+    }
     db.Schedule.findOrCreate({
       where: {ChildId: req.params.childid},
       defaults: theSchedule
-    }).then(function(dbSchedule) {
-      res.render("addanotherchildprompt",{pid:req.body.ParentId});
+    }).then(function() {
+      res.render('addanotherchildprompt',{pid:req.body.ParentId});
     });
   });
 

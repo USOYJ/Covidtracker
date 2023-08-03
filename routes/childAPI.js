@@ -4,7 +4,7 @@ module.exports = function(app) {
   //get all children
   app.get('/api/child', function(req, res) {
     db.Child.findAll({
-      include: [db.Parent, db.Schedule]
+      include: [db.Schedule]
     }).then(function(dbChild) {
       JSON.stringify(dbChild);
       res.json(dbChild);
@@ -18,7 +18,7 @@ module.exports = function(app) {
     // In this case, just db.Post
     db.Child.findAll({
       where: {id: req.params.id},
-      include: [db.Parent, db.Schedule]
+      include: [db.Schedule]
     }).then(function(dbChild) {
       JSON.stringify(dbChild);
       res.json(dbChild);
@@ -49,8 +49,8 @@ module.exports = function(app) {
     var daysToUpdate = {};
     for (var i = 0; i < daysOfWeek.length; i++) {
       if (daysOfWeek[i] in req.body && req.body[daysOfWeek[i]] === 'on') {
-        daysToUpdate[daysOfWeek[i]] = true; 
-      } else { 
+        daysToUpdate[daysOfWeek[i]] = true;
+      } else {
         daysToUpdate[daysOfWeek[i]] = false;
       }
     }
@@ -59,8 +59,8 @@ module.exports = function(app) {
     db.Child.update(req.body, {where: {id: req.params.id}}).then(function() {
       db.Schedule.update(daysToUpdate, {where: {ChildId: req.params.id}}).then(
         function() {
-					res.redirect("/childprofile/" + req.params.id);
-				}
+          res.redirect('/childprofile/' + req.params.id);
+        }
       );
     });
   });
@@ -71,7 +71,7 @@ module.exports = function(app) {
         id: req.params.id
       }
     }).then(function() {
-      res.redirect("/");
+      res.redirect('/');
     });
   });
 

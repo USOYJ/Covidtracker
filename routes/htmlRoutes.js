@@ -4,9 +4,9 @@ module.exports = function(app) {
  
   require('./childApiRoutes')(app);
   require('./parentApiRoutes')(app);
-  require('./forms')(app);
-  require('./scheduleRoutes')(app);
-  require('./mainroutes')(app);
+  require('../controllers/forms')(app);
+  require('../controllers/api/scheduleRoutes')(app);
+  require('../controllers/mainroutes')(app);
 
 
 

@@ -1,8 +1,8 @@
-const router = require("express").Router();
-var db = require("../models");
+const router = require('express').Router();
+var db = require('../models');
 
 //get all parents
-router.get("/", function (req, res) {
+router.get('/', function (req, res) {
   db.Parent.findAll({
     include: [db.Child],
   }).then(function (dbParent) {
@@ -12,7 +12,7 @@ router.get("/", function (req, res) {
 });
 
 //get one parent
-router.get("/:id", function (req, res) {
+router.get('/:id', function (req, res) {
   db.Parent.findOne({
     where: { id: req.params.id },
     include: [db.Child],
@@ -22,15 +22,15 @@ router.get("/:id", function (req, res) {
 });
 
 //register parednt and move on to add kid form
-router.post("/", function (req, res) {
+router.post('/', function (req, res) {
   db.Parent.create(req.body).then(function (dbParent) {
     //console.log(dbParent);
     //res.json(dbParent);
-    res.render("newchild", { pid: dbParent.id });
+    res.render('newchild', { pid: dbParent.id });
   });
 });
 
-router.delete("/:id", function (req, res) {
+router.delete('/:id', function (req, res) {
   db.Parent.destroy({
     where: {
       id: req.params.id,

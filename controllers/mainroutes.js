@@ -9,6 +9,12 @@ router.get('/register', function (req, res) {
   res.render('signup');
 });
 
+router.get('/home', function (req, res) {
+  res.render('home', {
+    loggedIn: req.session.loggedIn
+  });
+});
+
 
 router.get('/genKids', function (req, res) {
   res.render('testdbPostRoutes');

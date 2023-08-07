@@ -2,7 +2,7 @@ const router = require('express').Router();
 var db = require('../models');
 
 router.get('/', function (req, res) {
-  res.render('index', {
+  res.render('signin', {
   });
   /* db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
     res.render('index', {

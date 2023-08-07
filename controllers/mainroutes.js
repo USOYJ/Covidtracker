@@ -10,15 +10,12 @@ router.get('/register', function (req, res) {
 });
 
 router.get('/home', function (req, res) {
-  db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
-    console.log('ran', dbSchedule)
-    res.render('home', {
-      layout: 'main',
-      schedules: dbSchedule});
+  res.render('home', {
+    layout: 'main'
   });
+});
 //   res.render('home', {
 //     loggedIn: req.session.loggedIn
-  });
 // });
 
 

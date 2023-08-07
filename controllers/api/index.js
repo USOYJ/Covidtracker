@@ -4,10 +4,10 @@ const parentRoutes = require('./parentAPI');
 const scheduleRoutes = require('./scheduleRoutes');
 const userRoutes = require('./userRoutes');
 
-router.use('/users', userRoutes);
+
 //const models = require('./models');
 
-
+router.use('/users', userRoutes);
 router.use('/child', childRoutes);
 router.use('/parent', parentRoutes);
 router.use ('/schedule', scheduleRoutes);

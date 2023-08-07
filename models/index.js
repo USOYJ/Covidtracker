@@ -1,5 +1,13 @@
 const Child = require('./Child');
-const schedule = require('./schedule');
+const Schedule = require('./schedule');
 const User = require('./User');
 
-module.exports = {Child, User, schedule};
+Schedule.belongsTo(Child, {
+  foreignKey: 'child_id'
+});
+
+Child.hasOne(Schedule, {
+  foreignKey:'child_id'
+});
+
+module.exports = {Child, User, Schedule};

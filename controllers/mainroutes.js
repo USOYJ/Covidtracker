@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const {User, Child, Schedule} = require('../models')
+const { Child, Schedule} = require('../models');
 
 
 router.get('/', function (req, res) {
@@ -12,9 +12,9 @@ router.get('/register', function (req, res) {
 });
 
 router.get('/home', function (req, res) {
-    Schedule.findAll({include: [Child]}).then(function(dbSchedule) {
-      const schedules = dbSchedule.map((schedule)=> schedule.get({plain:true}))
-      console.log('ran', schedules);
+  Schedule.findAll({include: [Child]}).then(function(dbSchedule) {
+    const schedules = dbSchedule.map((schedule)=> schedule.get({plain:true}));
+    console.log('ran', schedules);
     res.render('home', {
       layout: 'main',
       schedules});
@@ -30,7 +30,7 @@ router.get('/genKids', function (req, res) {
 });
 
 router.get('/childprofile/:id', function (req, res) {
-    Child.findOne({
+  Child.findOne({
     where: { id: req.params.id },
     include: [Schedule],
   }).then(function (dbChild) {

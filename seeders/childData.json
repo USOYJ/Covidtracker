@@ -1,0 +1,23 @@
+[
+    {
+        "first_name": "Ella",
+        "last_name": "Jones",
+        "parent_email": "michealjones@pmail.com",
+        "password": "Mjon123@",
+        "active": true
+    },
+    {
+        "first_name": "Simbi",
+        "last_name": "Adeyemi",
+        "parent_email": "sallyadeyimi@pmail.com",
+        "password": "@saL87L3!",
+        "active": true
+    },
+    {
+        "first_name": "Brandon",
+        "last_name": "Alexander",
+        "parent_email": "fionaaex@pmail.com",
+        "password": "0$Br71!!",
+        "active": true
+    }
+]

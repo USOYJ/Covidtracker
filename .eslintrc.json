@@ -6,6 +6,7 @@
       "node": true,
       "es6": true,
       "es2017": true
+      
       // TODO: Add option to support ** operators
     },
     "rules": {

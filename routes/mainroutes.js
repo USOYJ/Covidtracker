@@ -3,7 +3,7 @@ var db = require('../models');
 module.exports = function(app) {
   app.get('/', function(req, res) {
     db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
-      console.log('ran', dbSchedule)
+      console.log('ran', dbSchedule);
       res.render('index', {
         layout: 'main',
         schedules: dbSchedule});

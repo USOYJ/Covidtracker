@@ -1,12 +1,12 @@
 const router = require('express').Router();
-// var db = require('../models');
+var db = require('../models');
 
 router.get('/', function (req, res) {
-  // db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
-  res.render('index', {
-    // schedules: dbSchedule,
+  db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
+    res.render('index', {
+      schedules: dbSchedule,
+    });
   });
-  // });
 });
 
 router.get('/genKids', function (req, res) {
@@ -14,15 +14,15 @@ router.get('/genKids', function (req, res) {
 });
 
 router.get('/childprofile/:id', function (req, res) {
-  // db.Child.findOne({
-  //   where: { id: req.params.id },
-  //   include: [db.Schedule],
-  // }).then(function (dbChild) {
-  res.render('childprofile', {
-    // child: dbChild, days: dbChild.Schedule
+  db.Child.findOne({
+    where: { id: req.params.id },
+    include: [db.Schedule],
+  }).then(function (dbChild) {
+    res.render('childprofile', {
+      child: dbChild, days: dbChild.Schedule
+    });
+    res.json(dbChild.Schedule);
   });
-  //res.json(dbChild.Schedule);
-  // });
 });
 
 router.get('/login', function (req, res) {

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-var db = require('../models');
+var db = require('../../models');
 
 //get whole schedule
 router.get('/', function (req, res) {

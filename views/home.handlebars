@@ -25,7 +25,26 @@
         <th>Edit</th>
       </thead>
       <tbody>
-        {{schedule}}
+        {{#each schedules as |schedule|}}
+        <tr>
+          <td>
+            {{schedule.child.id}}
+          </td>
+          <td>
+            {{schedule.child.first_name}} {{schedule.child.last_name}}
+          </td>
+          <td>
+            08/09/2003
+          </td>
+          <td>
+            <button data-childid = "{{schedule.child_id}}">Delete</button>
+          </td>
+          <td>
+            <button data-childid = "{{schedule.child_id}}">Edit</button>
+          </td>
+        </tr>
+
+       {{/each}}
       </tbody>
     </table>
     <script src="./js/logout.js"></script>

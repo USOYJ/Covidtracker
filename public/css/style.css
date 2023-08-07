@@ -1,15 +1,11 @@
 main {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
+  width: 50%;
+  margin: 50px auto;
+  text-align: center;
 }
 
 table {
   margin: 50px auto;
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
 }
 
 table,
@@ -21,8 +17,8 @@ td {
 
 th,
 td {
-  padding: 15px;
-  text-align: left;
+  padding: 5px;
+  
 }
 
 body {

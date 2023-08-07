@@ -1,4 +1,5 @@
-const child = require('./child');
+const Child = require('./Child');
 const schedule = require('./schedule');
+const User = require('./User');
 
-module.exports = {child, schedule};
+module.exports = {Child, User, schedule};

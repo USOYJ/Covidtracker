@@ -2,18 +2,11 @@ const router = require('express').Router();
 var db = require('../models');
 
 router.get('/', function (req, res) {
-  res.render('signin', {
-  });
-  /* db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
-    res.render('index', {
-      schedules: dbSchedule,
-    });
-  }); */
+  res.render('signin');
 });
 
 router.get('/register', function (req, res) {
-  res.render('signup', {
-  });
+  res.render('signup');
 });
 
 
@@ -33,7 +26,4 @@ router.get('/childprofile/:id', function (req, res) {
   });
 });
 
-router.get('/login', function (req, res) {
-  res.render('login');
-});
 module.exports = router;

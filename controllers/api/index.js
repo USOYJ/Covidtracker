@@ -2,7 +2,9 @@ const router = require('express').Router();
 const childRoutes = require('./childAPI');
 const parentRoutes = require('./parentAPI');
 const scheduleRoutes = require('./scheduleRoutes');
+const userRoutes = require('./userRoutes');
 
+router.use('/users', userRoutes);
 //const models = require('./models');
 
 

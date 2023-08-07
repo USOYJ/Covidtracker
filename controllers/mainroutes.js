@@ -18,6 +18,9 @@ router.get('/home', function (req, res) {
     res.render('home', {
       layout: 'main',
       schedules});
+    res.render('home', {
+      layout: 'main'
+    });
   });
 //   res.render('home', {
 //     loggedIn: req.session.loggedIn

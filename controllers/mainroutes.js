@@ -2,11 +2,13 @@ const router = require('express').Router();
 var db = require('../models');
 
 router.get('/', function (req, res) {
-  db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
+  res.render('index', {
+  });
+  /* db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
     res.render('index', {
       schedules: dbSchedule,
     });
-  });
+  }); */
 });
 
 router.get('/genKids', function (req, res) {

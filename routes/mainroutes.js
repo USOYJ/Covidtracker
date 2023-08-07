@@ -3,7 +3,9 @@ var db = require('../models');
 module.exports = function(app) {
   app.get('/', function(req, res) {
     db.Schedule.findAll({include: [db.Child]}).then(function(dbSchedule) {
-      res.render('index', {schedules: dbSchedule});
+      res.render('index', {
+        layout: 'main',
+        schedules: dbSchedule});
     });
   });
 

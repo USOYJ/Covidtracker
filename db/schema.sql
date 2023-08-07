@@ -1,2 +1,2 @@
-drop database if exists playcare_db;
-create database playcare_db;
+-- drop database if exists playcare_db;
+-- create database playcare_db;

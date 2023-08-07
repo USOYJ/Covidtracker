@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "node server.js",
         "lint": "npx eslint \"**/*.js\"",
-        "prepare": "husky install"
+        "prepare": "husky install", 
+        "seed": "node seeders/seeds.js"
     },
     "repository": {
         "type": "git",

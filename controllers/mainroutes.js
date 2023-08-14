@@ -22,10 +22,9 @@ router.get('/home', function (req, res) {
       layout: 'main'
     });
   });
-//   res.render('home', {
-//     loggedIn: req.session.loggedIn
+
 });
-// });
+
 
 
 router.get('/genKids', function (req, res) {

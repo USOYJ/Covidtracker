@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Child, Schedule} = require('../models');
+const { Child, Schedule } = require('../models');
 
 
 router.get('/', function (req, res) {

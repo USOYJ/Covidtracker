@@ -24,8 +24,6 @@ router.get('/:id', function (req, res) {
 //register parednt and move on to add kid form
 router.post('/', function (req, res) {
   db.Parent.create(req.body).then(function (dbParent) {
-    console.log(dbParent);
-    res.json(dbParent);
     res.render('newchild', { pid: dbParent.id });
   });
 });

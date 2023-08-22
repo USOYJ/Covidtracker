@@ -18,9 +18,6 @@ router.get('/home', function (req, res) {
     res.render('home', {
       layout: 'main',
       schedules});
-    res.render('home', {
-      layout: 'main'
-    });
   });
 
 });
@@ -39,7 +36,6 @@ router.get('/childprofile/:id', function (req, res) {
     res.render('childprofile', {
       child: dbChild, days: dbChild.Schedule
     });
-    res.json(dbChild.Schedule);
   });
 });
 

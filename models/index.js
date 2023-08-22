@@ -1,5 +1,5 @@
-const Child = require('./rename_child');
-const Schedule = require('./rename_schedule');
+const Child = require('./Child');
+const Schedule = require('./Schedule');
 const User = require('./User');
 
 Schedule.belongsTo(Child, {

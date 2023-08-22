@@ -39,6 +39,7 @@ router.post('/', function (req, res) {
     res.render('schedulechild', {
       childid: dbChild.id,
       pid: req.body.ParentId,
+      //change to parent email
     });
   });
 });

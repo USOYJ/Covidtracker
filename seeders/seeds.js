@@ -14,7 +14,7 @@ const seedDatabase = async () => {
 
   for (const schedule of scheduleData) {
     await Schedule.create({
-      ...schedule,
+      schedule,
       child_id: child[Math.floor(Math.random() * child.length)].id,
     });
   }

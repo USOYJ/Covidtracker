@@ -14,8 +14,8 @@ Schedule.init(
     child_id:{
       type:DataTypes.INTEGER,
       references:{
-        model: 'child',
-        key:'id',
+        model:'child',
+        key:'id'
       }
     }
   },

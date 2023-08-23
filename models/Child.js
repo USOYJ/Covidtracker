@@ -40,6 +40,7 @@ Child.init(
     admission_date: {
       type: DataTypes.DATE,
       defaultValue: DATE.NOW,
+      allowNull: false
     }
   },
   {

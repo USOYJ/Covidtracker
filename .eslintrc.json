@@ -8,7 +8,7 @@
       "es2017": true,
       
       // TODO: Add option to support ** operators
-      "parser": "@babel/eslint-parser"
+      "es2020": true
     },
     "rules": {
       // TODO: Add rule to disallow setting variables to undefined

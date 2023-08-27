@@ -12,12 +12,21 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  // for (const schedule of scheduleData) {
+  //   await Schedule.create({
+  //     schedule,
+  //     child_id: child[Math.floor(Math.random() * child.length)].id,
+  //   });
+  // }
+
+  // Inserting the schedule data into the schedule table referencing the child_id
   for (const schedule of scheduleData) {
     await Schedule.create({
-      schedule,
+      ...schedule,
       child_id: child[Math.floor(Math.random() * child.length)].id,
     });
   }
+
 
   process.exit(0);
 };

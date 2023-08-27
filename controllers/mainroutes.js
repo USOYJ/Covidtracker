@@ -11,22 +11,18 @@ router.get('/register', function (req, res) {
   res.render('signup');
 });
 
-router.get('/home', function (req, res) {
-  Child.findAll({include: [Schedule]}).then(function(dbChildren) {
-    const children = dbChildren.map((child)=> child.get({plain:true}));
-    //const schedules = dbSchedule.map((schedule)=> schedule.get({plain:true}));
-    console.log('ran', children);
+router.get('/home', async function (req, res) {
+  try {
+    const dbChildren = await Child.findAll();
+    const children = dbChildren.map((child) => child.get({ plain: true }));
     res.render('home', {
       layout: 'main',
-      children});
-  });
-
-});
-
-
-
-router.get('/genKids', function (req, res) {
-  res.render('testdbPostRoutes');
+      children
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/childprofile/:id', async function (req, res) {
@@ -37,7 +33,6 @@ router.get('/childprofile/:id', async function (req, res) {
     }).then(function (dbChild) {
       res.render('childprofile', {
         layout: 'main',
-        console: console.log(dbChild),
         child: dbChild, days: dbChild.Schedule
       });
     });

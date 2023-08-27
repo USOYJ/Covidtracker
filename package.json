@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/USOYJ/playcare",
   "dependencies": {
+    "@babel/eslint-parser": "^7.22.11",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",

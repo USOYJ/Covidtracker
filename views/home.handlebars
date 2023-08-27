@@ -25,22 +25,22 @@
         <th>Edit</th>
       </thead>
       <tbody>
-        {{#each schedules as |schedule|}}
+        {{#each children as |child|}}
         <tr>
           <td>
-            {{schedule.child.id}}
+            {{child.id}}
           </td>
           <td>
-            {{schedule.child.first_name}} {{schedule.child.last_name}}
+            {{child.first_name}} {{child.child.last_name}}
           </td>
           <td>
-            {{schedule.child.admission_date}}
+            {{child.admission_date}}
           </td>
           <td>
-           <button data-childId = "{{schedule.child_id}}" id="delete-row-btn">Delete</button>
+           <button data-childId = "{{child.child_id}}" id="delete-row-btn">Delete</button>
           </td>
           <td>
-             <a href ="childprofile/{{schedule.child_id}}">Edit</a>
+             <a href ="childprofile/{{child.id}}">Edit</a>
           </td>
         </tr>
        {{/each}} 

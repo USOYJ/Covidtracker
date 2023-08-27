@@ -31,12 +31,6 @@ function deleteRowById(id) {
   location.reload('/home');
 }
 
-function handleEditRow(id) {
-  const updateSection = document.querySelector('#update-row');
-  updateSection.hidden = false;
-  document.querySelector('#update-name-input').dataset.id = id;
-}
-
 // A function where I can show the child profile
 function showChildProfile(id) {
   reload('/childprofile/' + id);

@@ -37,10 +37,10 @@
             {{schedule.child.admission_date}}
           </td>
           <td>
-            <button data-childId = "{{schedule.child_id}}" id="delete-row-btn">Delete</button>
+           <button data-childId = "{{schedule.child_id}}" id="delete-row-btn">Delete</button>
           </td>
           <td>
-            <button data-childid = "{{schedule.child_id}}">Edit</button>
+             <a href ="childprofile/{{schedule.child_id}}">Edit</a>
           </td>
         </tr>
        {{/each}} 

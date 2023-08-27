@@ -34,6 +34,8 @@ router.get('/childprofile/:id', function (req, res) {
     include: [Schedule],
   }).then(function (dbChild) {
     res.render('childprofile', {
+      layout: 'main',
+      console: console.log(dbChild),
       child: dbChild, days: dbChild.Schedule
     });
   });

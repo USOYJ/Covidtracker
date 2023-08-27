@@ -2,11 +2,11 @@
 
 document.querySelector('table tbody').addEventListener('click', function(event) {
   if (event.target.id === 'delete-row-btn') {
-    console.log(event.target.dataset);
+    console.log(event.target.dataset.childid);
     deleteRowById(event.target.dataset.childid);
   }
   if (event.target.className === 'edit-row-btn') {
-    handleEditRow(event.target.dataset.id);
+    showChildProfile(event.target.dataset.id);
   }
 });
 
@@ -27,17 +27,8 @@ document.querySelector('table tbody').addEventListener('click', function(event) 
 
 function deleteRowById(id) {
   // delete from database by id and then reload the page
-  fetch('/delete:' + id, {
-    method: 'DELETE'
-  })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        location.reload();
-      } else {
-        alert('Something went wrong');
-      }
-    });
+  fetch('/api/child/delete:' + id);
+  location.reload('/home');
 }
 
 function handleEditRow(id) {
@@ -46,6 +37,10 @@ function handleEditRow(id) {
   document.querySelector('#update-name-input').dataset.id = id;
 }
 
+// A function where I can show the child profile
+function showChildProfile(id) {
+  reload('/childprofile/' + id);
+}
 // updateBtn.onclick = function() {
 //   const updateNameInput = document.querySelector('#update-name-input');
 

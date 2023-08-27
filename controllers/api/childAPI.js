@@ -66,17 +66,8 @@ router.post('/:id', function (req, res) {
   });
 });
 
-router.post('/del/:id', function (req, res) {
-  db.Child.destroy({
-    where: {
-      id: req.params.id,
-    },
-  }).then(function () {
-    res.redirect('/');
-  });
-});
-
-router.delete('/:id', function (req, res) {
+// delete child
+router.delete('delete/:id', function (req, res) {
   db.Child.destroy({
     where: {
       id: req.params.id,

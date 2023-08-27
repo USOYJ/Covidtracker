@@ -40,7 +40,10 @@ Child.init(
     admission_date: {
       type: DataTypes.DATE,
       defaultValue: DATE.NOW,
-      allowNull: false
+      // Show only the date portion by MM/DD/YYYY
+      get() {
+        return this.getDataValue('admission_date').toLocaleDateString('en-US');
+      }
     }
   },
   {

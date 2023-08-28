@@ -35,7 +35,8 @@ router.get('/childprofile/:id', async function (req, res) {
       res.render('childprofile', {
         layout: 'main',
         loggedIn: req.session.loggedIn,
-        child: dbChild, days: dbChild.Schedule
+        console: console.log(dbChild),
+        dbChild, days: dbChild.Schedule
       });
     });
   } catch (err) {

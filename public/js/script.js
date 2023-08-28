@@ -1,10 +1,10 @@
 /* eslint-disable no-use-before-define */
 
 document.querySelector('table tbody').addEventListener('click', function(event) {
-  if (event.target.id === 'delete-row-btn') {
-    console.log(event.target.dataset.childid);
-    deleteRowById(event.target.dataset.childid);
-  }
+  // if (event.target.id === 'delete-row-btn') {
+  //   console.log(event.target.dataset.childid);
+  //   deleteRowById(event.target.dataset.childid);
+  // }
   if (event.target.className === 'edit-row-btn') {
     showChildProfile(event.target.dataset.id);
   }

@@ -22,7 +22,6 @@
         <th>ID</th>
         <th>Names</th>
         <th>Date of admission</th>
-        <th>Delete</th>
         <th>Edit</th>
       </thead>
       <tbody>
@@ -32,13 +31,10 @@
             {{child.id}}
           </td>
           <td>
-            {{child.first_name}} {{child.child.last_name}}
+            {{child.first_name}} {{child.last_name}}
           </td>
           <td>
             {{child.admission_date}}
-          </td>
-          <td>
-           <button data-childId = "{{child.child_id}}" id="delete-row-btn">Delete</button>
           </td>
           <td>
              <a href ="childprofile/{{child.id}}">Edit</a>

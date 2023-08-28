@@ -30,13 +30,14 @@ router.get('/childprofile/:id', async function (req, res) {
   try {
     Child.findOne({
       where: { id: req.params.id },
+      // include schedule where it references the child id
       include: [Schedule],
     }).then(function (dbChild) {
       res.render('childprofile', {
         layout: 'main',
         loggedIn: req.session.loggedIn,
         console: console.log(dbChild),
-        dbChild, days: dbChild.Schedule
+        child: dbChild.dataValues, days: dbChild.schedule.dataValues
       });
     });
   } catch (err) {

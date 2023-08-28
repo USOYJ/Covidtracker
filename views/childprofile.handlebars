@@ -1,3 +1,4 @@
+{{#if loggedIn}}
 <div class="container">
   <div class="row mt-4">
     <div class="col-sm-12 col-md-6 col-lg-6">
@@ -148,9 +149,10 @@
 				</form>
 			</div>
 		</div>
+    <br />
   </div>
-  <a href="/">Go to Week View</a>
-</div>"
+  <a href="/home">Go to Week View</a>
+</div>
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
@@ -169,3 +171,7 @@
     });
   });
 </script>
+{{else}}
+<p>You must be logged In to look at the data.</p>
+<a href="/">Login</a>
+{{/if}}

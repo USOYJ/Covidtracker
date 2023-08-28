@@ -17,6 +17,7 @@ router.get('/home', async function (req, res) {
     const children = dbChildren.map((child) => child.get({ plain: true }));
     res.render('home', {
       layout: 'main',
+      loggedIn: req.session.loggedIn,
       children
     });
   } catch (err) {
@@ -33,6 +34,7 @@ router.get('/childprofile/:id', async function (req, res) {
     }).then(function (dbChild) {
       res.render('childprofile', {
         layout: 'main',
+        loggedIn: req.session.loggedIn,
         child: dbChild, days: dbChild.Schedule
       });
     });

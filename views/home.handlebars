@@ -1,4 +1,5 @@
 <body>
+  {{#if loggedIn}}
   <header>
     <h1>Play<span>Care</span></h1>
     <button id="logout" class="btn-no-style">Logout</button>
@@ -46,6 +47,13 @@
        {{/each}} 
       </tbody>
     </table>
+  {{else}}
+  <header>
+    <h1>Play<span>Care</span></h1>
+  </header>
+  <p>You must be logged in to view this page.</p>
+  <a href="/">Login</a>
+  {{/if}}
     <script src="./js/logout.js"></script>
     <script src="./js/script.js"></script>
   </main>

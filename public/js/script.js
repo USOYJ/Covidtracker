@@ -1,11 +1,12 @@
 /* eslint-disable no-use-before-define */
 
-document.querySelector('table tbody').addEventListener('click', function(event) {
-  if (event.target.className === 'edit-row-btn') {
-    showChildProfile(event.target.dataset.id);
-  }
+const updateChild = document.getElementById('updateBtn');
+
+// Make edit button hidden when it's been clicked
+updateChild.addEventListener('click', function() {
+  fetch('/api/child/delete/:id');
 });
 
-function showChildProfile(id) {
-  reload('/childprofile/' + id);
-}
+// function showChildProfile(id) {
+//   reload('/childprofile/' + id);
+// }

@@ -114,10 +114,11 @@
         </div>
         <br />
         <br />
-        {{!--
-        <button class="btn btn-success" type="submit">Update Child</button> --}}
+        {{!-- <button class="btn btn-success" type="submit">Update Child</button> --}}
       </form>
+      <div id="updateChild">
       <button id="edit" class="btn btn-primary">Edit Child</button>
+      </div>
     </div>
 		<div class="row">
 			<div class="col">
@@ -136,8 +137,10 @@
 ></script>
 <script>
   //edit child btn make form editable
-  $('#edit').on('click', function() {
+  $('#edit').click(function() {
     console.log('editing');
+    $('#edit').hide();
+    console.log('hidden');
     $('#updateChild').append(
       $('<button>')
         .attr({type: 'submit', class: 'btn btn-success', id: 'updatebtn'})

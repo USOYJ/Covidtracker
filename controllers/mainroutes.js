@@ -34,7 +34,7 @@ router.get('/childprofile/:id', async function (req, res) {
       include: [Schedule],
     }).then(function (dbChild) {
       res.render('childprofile', {
-        layout: 'main',
+        layout: 'child',
         loggedIn: req.session.loggedIn,
         console: console.log(dbChild),
         child: dbChild.dataValues, days: dbChild.schedule.dataValues

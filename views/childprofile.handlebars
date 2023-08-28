@@ -1,13 +1,17 @@
-{{#if loggedIn}}
 <div class="container">
   <div class="row mt-4">
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <small>Child ID: {{dbChild.id}}</small>
+      <small>Child ID: {{child.id}}</small>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <form>
+      <form
+        class="mb-3 disabledinput"
+        id="updateChild"
+        method="post"
+        action="/api/child/{{child.id}}"
+      >
         <div class="form-row">
           <div class="form-group col-md-6">
             <h2>
@@ -17,7 +21,7 @@
                 class="form-control disabledinput"
                 id="child-name-first"
                 name="name_first"
-                value="{{child.first_name}}"
+                value="{{child.name_first}}"
                 disabled
               />
             </h2>
@@ -30,7 +34,7 @@
                 class="form-control disabledinput"
                 id="child-name-last"
                 name="name_last"
-                value="{{child.last_name}}"
+                value="{{child.name_last}}"
                 disabled
               />
             </h2>
@@ -149,10 +153,9 @@
 				</form>
 			</div>
 		</div>
-    <br />
   </div>
-  <a href="/home">Go to Week View</a>
-</div>
+  <a href="/">Go to Week View</a>
+</div>"
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
@@ -171,7 +174,3 @@
     });
   });
 </script>
-{{else}}
-<p>You must be logged In to look at the data.</p>
-<a href="/">Login</a>
-{{/if}}

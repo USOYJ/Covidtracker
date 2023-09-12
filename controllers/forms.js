@@ -1,11 +1,6 @@
 module.exports = function(app) {
-
-  app.get('/newParent', function(req, res) {
-    res.render('newparent');
-  });
-
-  app.get('/newChild/:pid', function(req, res) {
-    res.render('newchild',{parentId:req.params.pid});
+  app.get('/newChild/', function(req, res) {
+    res.render('newchild');
   });
 
   app.get('/scheduleChild', function(req, res) {

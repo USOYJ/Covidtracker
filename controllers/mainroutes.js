@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Child, Schedule } = require('../models');
+const { Child } = require('../models');
 
 
 router.get('/', function (req, res) {
@@ -29,15 +29,13 @@ router.get('/home', async function (req, res) {
 router.get('/childprofile/:id', async function (req, res) {
   try {
     Child.findOne({
-      where: { id: req.params.id },
-      // include schedule where it references the child id
-      include: [Schedule],
+      where: { id: req.params.id }
     }).then(function (dbChild) {
       res.render('childprofile', {
         layout: 'child',
         loggedIn: req.session.loggedIn,
         console: console.log(dbChild),
-        child: dbChild.dataValues, days: dbChild.schedule.dataValues
+        child: dbChild.dataValues
       });
     });
   } catch (err) {
@@ -45,16 +43,13 @@ router.get('/childprofile/:id', async function (req, res) {
     res.status(500).json(err);
   }
 });
-//   Child.findOne({
-//     where: { id: req.params.id },
-//     include: [Schedule],
-//   }).then(function (dbChild) {
-//     res.render('childprofile', {
-//       layout: 'main',
-//       console: console.log(dbChild),
-//       child: dbChild, days: dbChild.Schedule
-//     });
-//   });
-// });
+
+router.get('/newChild', function (req, res) {
+  //add new child form
+  res.render('newChild', {
+    layout: 'child',
+    loggedIn: req.session.loggedIn
+  });
+});
 
 module.exports = router;

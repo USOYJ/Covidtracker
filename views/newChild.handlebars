@@ -1,10 +1,4 @@
 {{#if loggedIn}}
-<div class="container">
-  <div class="row mt-4">
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <small>Child ID: {{child.id}}</small>
-    </div>
-  </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6">
       <form>
@@ -18,7 +12,6 @@
                 id="child-name-first"
                 name="name_first"
                 value="{{child.first_name}}"
-                disabled
               />
             </h2>
           </div>
@@ -31,7 +24,6 @@
                 id="child-name-last"
                 name="name_last"
                 value="{{child.last_name}}"
-                disabled
               />
             </h2>
           </div>
@@ -45,7 +37,6 @@
             id="email"
             name="parent_email"
             value="{{child.parent_email}}"
-            disabled
           />
           <br />
           <label for="parentPhone">Parent's Phone Number:</label>
@@ -55,21 +46,17 @@
             id="parentPhone"
             name="parent_phone"
             value="{{child.parent_phone}}"
-            disabled
           />
         </div>
         <br />
         <br />
         {{!-- <button class="btn btn-success" type="submit">Update Child</button> --}}
       </form>
-      <div id="updateChild">
-      <button id="edit" class="btn btn-primary">Edit Child</button>
-      </div>
     </div>
 		<div class="row">
 			<div class="col">
-				<form method="post" action="/api/child/del/{{child.id}}">
-				<button action="submit" class="btn btn-danger btn-sm" id="deleteChild">Delete Child</button>
+				<form method="post" action="/api/child/">
+				<button action="submit" class="btn btn-sm" id="addChild">Add Child</button>
 				</form>
 			</div>
 		</div>
@@ -81,22 +68,6 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 ></script>
-<script>
-  //edit child btn make form editable
-  $('#edit').click(function() {
-    console.log('editing');
-    $('#edit').hide();
-    console.log('hidden');
-    $('#updateChild').append(
-      $('<button>')
-        .attr({type: 'submit', class: 'btn btn-success', id: 'updatebtn'})
-        .text('Update Child')
-    );
-    $('.disabledinput').each(function(thing) {
-      $(this).prop('disabled', false);
-    });
-  });
-</script>
 {{else}}
 <p>You must be logged In to look at the data.</p>
 <a href="/">Login</a>

@@ -26,8 +26,8 @@ router.get('/:id', function (req, res) {
 });
 
 //add new child form
-router.get('/new/:pid', function (req, res) {
-  res.render('newchild', { pid: req.params.pid });
+router.get('/new', function (req, res) {
+  res.render('newchild');
 });
 
 //add new child
@@ -45,25 +45,13 @@ router.post('/', function (req, res) {
 });
 
 router.post('/:id', function (req, res) {
-  //console.log(req.body);
-  var daysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-  var daysToUpdate = {};
-  for (var i = 0; i < daysOfWeek.length; i++) {
-    if (daysOfWeek[i] in req.body && req.body[daysOfWeek[i]] === 'on') {
-      daysToUpdate[daysOfWeek[i]] = true;
-    } else {
-      daysToUpdate[daysOfWeek[i]] = false;
-    }
-  }
-  //res.json(req.body);
-
-  db.Child.update(req.body, { where: { id: req.params.id } }).then(function () {
-    db.Schedule.update(daysToUpdate, {
-      where: { ChildId: req.params.id },
-    }).then(function () {
-      res.redirect('/childprofile/' + req.params.id);
+  db.Child.update(req.body, { where: { id: req.params.id } })
+    .then(function (dbChild) {
+      res.json(dbChild);
+    })
+    .catch(function (err) {
+      res.json(err);
     });
-  });
 });
 
 // delete child

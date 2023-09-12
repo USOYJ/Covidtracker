@@ -44,11 +44,12 @@ router.get('/childprofile/:id', async function (req, res) {
   }
 });
 
-router.get('/newChild', function (req, res) {
+router.get('/newChild', async function (req, res) {
   //add new child form
   res.render('newChild', {
     layout: 'child',
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    childInfo: req.body
   });
 });
 

@@ -11,7 +11,7 @@
                 class="form-control disabledinput"
                 id="child-name-first"
                 name="name_first"
-                value="{{child.first_name}}"
+                value="{{childInfo.first_name}}"
               />
             </h2>
           </div>
@@ -23,7 +23,7 @@
                 class="form-control disabledinput"
                 id="child-name-last"
                 name="name_last"
-                value="{{child.last_name}}"
+                value="{{childInfo.last_name}}"
               />
             </h2>
           </div>
@@ -36,7 +36,7 @@
             class="form-control disabledinput"
             id="email"
             name="parent_email"
-            value="{{child.parent_email}}"
+            value="{{childInfo.parent_email}}"
           />
           <br />
           <label for="parentPhone">Parent's Phone Number:</label>
@@ -45,12 +45,11 @@
             class="form-control disabledinput"
             id="parentPhone"
             name="parent_phone"
-            value="{{child.parent_phone}}"
+            value="{{childInfo.parent_phone}}"
           />
         </div>
         <br />
         <br />
-        {{!-- <button class="btn btn-success" type="submit">Update Child</button> --}}
       </form>
     </div>
 		<div class="row">
@@ -68,6 +67,12 @@
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 ></script>
+<script>
+    $("#addChild").onClick(
+        // add child to database
+        newChild
+    )
+</script>
 {{else}}
 <p>You must be logged In to look at the data.</p>
 <a href="/">Login</a>

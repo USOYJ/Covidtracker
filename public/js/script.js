@@ -10,7 +10,7 @@ updateChild.addEventListener('click', function() {
 
 // Make Add Child button to the new child form
 AddChild.addEventListener('click', function() {
-  fetch('/newChild');
+  href('/newChild');
 });
 
 // function showChildProfile(id) {

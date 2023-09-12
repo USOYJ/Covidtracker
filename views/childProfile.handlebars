@@ -1,3 +1,4 @@
+{{#if loggedIn}}
 <div class="container">
   <div class="row mt-4">
     <div class="col-sm-12 col-md-6 col-lg-6">
@@ -6,12 +7,7 @@
   </div>
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6">
-      <form
-        class="mb-3 disabledinput"
-        id="updateChild"
-        method="post"
-        action="/api/child/{{child.id}}"
-      >
+      <form>
         <div class="form-row">
           <div class="form-group col-md-6">
             <h2>
@@ -21,7 +17,7 @@
                 class="form-control disabledinput"
                 id="child-name-first"
                 name="name_first"
-                value="{{child.name_first}}"
+                value="{{child.first_name}}"
                 disabled
               />
             </h2>
@@ -34,7 +30,7 @@
                 class="form-control disabledinput"
                 id="child-name-last"
                 name="name_last"
-                value="{{child.name_last}}"
+                value="{{child.last_name}}"
                 disabled
               />
             </h2>
@@ -45,7 +41,7 @@
             <div class="form-check">
               <input class="form-check-input disabledinput" type="checkbox"
               id="selectmonday" name="monday" {{#if
-              child.Schedule.monday}}checked{{/if}} disabled />
+              child.chedule.monday}}checked{{/if}} disabled />
               <label class="form-check-label" for="selectmonday">
                 Monday {{#if child.Schedule.monday}}
                 <small>Currently Enrolled</small>
@@ -94,57 +90,35 @@
             </div>
           </fieldset>
         </div>
+        <br />
         <div class="form-group">
-          <label for="address">Age</label>
+          <label for="parent-email">Parent E-Mail:</label>
           <input
             type="text"
             class="form-control disabledinput"
-            id="age"
-            name="age"
-            value="{{child.age}}"
+            id="email"
+            name="parent_email"
+            value="{{child.parent_email}}"
             disabled
           />
-          <label for="gender">Gender</label>
+          <br />
+          <label for="parentPhone">Parent's Phone Number:</label>
           <input
-            type="text"
+            type="tel"
             class="form-control disabledinput"
-            id="gender"
-            name="gender"
-            value="{{child.gender}}"
-            disabled
-          />
-          <label for="diet">Allergies</label>
-          <input
-            type="text"
-            class="form-control disabledinput"
-            id="allergies"
-            name="allergies"
-            value="{{child.allergies}}"
-            disabled
-          />
-          <label for="diet">Diet Restrictions</label>
-          <input
-            type="text"
-            class="form-control disabledinput"
-            id="dietRestrictions"
-            name="dietRestrictions"
-            value="{{child.dietRestrictions}}"
-            disabled
-          />
-          <label for="diet">Notes</label>
-          <input
-            type="text"
-            class="form-control disabledinput"
-            id="notes"
-            name="notes"
-            value="{{child.notes}}"
+            id="parentPhone"
+            name="parent_phone"
+            value="{{child.parent_phone}}"
             disabled
           />
         </div>
-        {{!--
-        <button class="btn btn-success" type="submit">Update Child</button> --}}
+        <br />
+        <br />
+        {{!-- <button class="btn btn-success" type="submit">Update Child</button> --}}
       </form>
+      <div id="updateChild">
       <button id="edit" class="btn btn-primary">Edit Child</button>
+      </div>
     </div>
 		<div class="row">
 			<div class="col">
@@ -153,17 +127,20 @@
 				</form>
 			</div>
 		</div>
+    <br />
   </div>
-  <a href="/">Go to Week View</a>
-</div>"
+  <a href="/home">Go to Week View</a>
+</div>
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
 ></script>
 <script>
   //edit child btn make form editable
-  $('#edit').on('click', function() {
+  $('#edit').click(function() {
     console.log('editing');
+    $('#edit').hide();
+    console.log('hidden');
     $('#updateChild').append(
       $('<button>')
         .attr({type: 'submit', class: 'btn btn-success', id: 'updatebtn'})
@@ -174,3 +151,7 @@
     });
   });
 </script>
+{{else}}
+<p>You must be logged In to look at the data.</p>
+<a href="/">Login</a>
+{{/if}}

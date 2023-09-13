@@ -1,24 +1,37 @@
 const sequelize = require('../config/connection');
-const { Child } = require('../models');
-
+const seedFirstnames = require('./firstname');
+const seedLastnames = require('./lastname');
+const seedParentsemail = require('./parentsemail');
+const seedParentsphone = require('./parentsphone');
 const childData = require('./childData.json');
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+const seedAll = async () => {
+  try {
+    await sequelize.sync({ force: true });
+    await seedFirstnames();
+    await seedLastnames();
+    await seedParentsemail();
+    await seedParentsphone();
 
-  const children = await Child.bulkCreate(childData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  // Inserting the children data into the child table
-  for (const child of children) {
-    await Child.create({
-      ...child,
+    // Seeding childData or other data, if needed
+    const children = await Child.bulkCreate(childData, {
+      individualHooks: true,
+      returning: true,
     });
-  }
 
-  process.exit(0);
+    console.log(`Successfully seeded ${children.length} children.`);
+    console.log('Successfully seeded firstname, lastname, parentsemail, parentsphone, etc.');
+
+    console.log('Database seeded successfully!');
+  } catch (error) {
+    console.error('Error seeding the database:', error);
+  } finally {
+    process.exit(0);
+  }
 };
 
-seedDatabase();
+seedAll();
+
+
+
+

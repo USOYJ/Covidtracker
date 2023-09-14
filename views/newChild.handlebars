@@ -70,7 +70,12 @@
 <script>
     $("#addChild").onClick(
         // add child to database
-        newChild
+        dbChild = {
+            first_name: $("#child-name-first").val(),
+            last_name: $("#child-name-last").val(),
+            parent_email: $("#email").val(),
+            parent_phone: $("#parentPhone").val()
+        }
     )
 </script>
 {{else}}

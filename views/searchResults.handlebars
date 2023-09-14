@@ -1,0 +1,50 @@
+<body>
+  {{#if loggedIn}}
+  <header>
+    <h1>Play<span>Care</span></h1>
+  </header>
+
+  <main>
+    <a href="/home">Return Home</a>
+    
+    <br><br><br>
+    <div>
+      <input placeholder="search by first name" id="search-input">
+      <button id="search-btn">Search</button>
+    </div>
+
+    <table id="table">
+      <thead>
+        <th>ID</th>
+        <th>Names</th>
+        <th>Date of admission</th>
+        <th>Edit</th>
+      </thead>
+      <tbody>
+        {{#each children as |child|}}
+        <tr>
+          <td>
+            {{child.id}}
+          </td>
+          <td>
+            {{child.first_name}} {{child.last_name}}
+          </td>
+          <td>
+            {{child.admission_date}}
+          </td>
+          <td>
+             <a href ="childprofile/{{child.id}}">Edit</a>
+          </td>
+        </tr>
+       {{/each}} 
+      </tbody>
+    </table>
+  {{else}}
+  <header>
+    <h1>Play<span>Care</span></h1>
+  </header>
+  <p>You must be logged in to view this page.</p>
+  <a href="/">Login</a>
+  {{/if}}
+    <script src="./js/script.js"></script>
+  </main>

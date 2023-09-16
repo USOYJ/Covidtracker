@@ -52,7 +52,7 @@ router.get('/childprofile/:id', async function (req, res) {
       where: { id: req.params.id }
     }).then(function (dbChild) {
       res.render('childprofile', {
-        layout: 'child',
+        layout: 'main',
         loggedIn: req.session.loggedIn,
         console: console.log(dbChild),
         child: dbChild.dataValues
@@ -67,7 +67,7 @@ router.get('/childprofile/:id', async function (req, res) {
 router.get('/newChild', async function (req, res) {
   //add new child form
   res.render('newChild', {
-    layout: 'child',
+    layout: 'main',
     loggedIn: req.session.loggedIn,
     childInfo: req.body,
     dbChild: require('../models/Child')

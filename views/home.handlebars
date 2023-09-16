@@ -1,12 +1,11 @@
 <body>
-  {{#if loggedIn}}
   <header>
     <h1>Play<span>Care</span></h1>
   </header>
-
+  {{#if loggedIn}}
   <main>
     <a href="/newChild">Add Child</a>
-    
+
     <br><br><br>
     <div>
       <input placeholder="search by first name" id="search-input">
@@ -33,20 +32,20 @@
             {{child.admission_date}}
           </td>
           <td>
-             <a href ="childprofile/{{child.id}}">Edit</a>
+            <a href="childprofile/{{child.id}}">Edit</a>
           </td>
         </tr>
-       {{/each}} 
+        {{/each}}
       </tbody>
     </table>
     <button id="logout" class="btn-no-style">Logout</button>
-  {{else}}
-  <header>
-    <h1>Play<span>Care</span></h1>
-  </header>
-  <p>You must be logged in to view this page.</p>
-  <a href="/">Login</a>
-  {{/if}}
+    {{else}}
+    <header>
+      <h1>Play<span>Care</span></h1>
+    </header>
+    <p>You must be logged in to view this page.</p>
+    <a href="/">Login</a>
+    {{/if}}
     <script src="./js/logout.js"></script>
     <script src="./js/script.js"></script>
   </main>

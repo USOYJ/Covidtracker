@@ -1,82 +1,63 @@
+<header>
+  <h1>Play<span>Care</span></h1>
+</header>
+
 {{#if loggedIn}}
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <form>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <h2>
+            <label for="name-first">First Name</label>
+            <input type="text" class="form-control disabledinput" id="child-name-first" name="name_first"
+              value="{{childInfo.first_name}}" />
+          </h2>
+        </div>
+        <div class="form-group col-md-6">
+          <h2>
+            <label for="name-first">Last Name</label>
+            <input type="text" class="form-control disabledinput" id="child-name-last" name="name_last"
+              value="{{childInfo.last_name}}" />
+          </h2>
+        </div>
+      </div>
+      <br />
+      <div class="form-group">
+        <label for="parent-email">Parent E-Mail:</label>
+        <input type="text" class="form-control disabledinput" id="email" name="parent_email"
+          value="{{childInfo.parent_email}}" />
+        <br />
+        <label for="parentPhone">Parent's Phone Number:</label>
+        <input type="tel" class="form-control disabledinput" id="parentPhone" name="parent_phone"
+          value="{{childInfo.parent_phone}}" />
+      </div>
+      <br />
+      <br />
+    </form>
+  </div>
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-6">
-      <form>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <h2>
-              <label for="name-first">First Name</label>
-              <input
-                type="text"
-                class="form-control disabledinput"
-                id="child-name-first"
-                name="name_first"
-                value="{{childInfo.first_name}}"
-              />
-            </h2>
-          </div>
-          <div class="form-group col-md-6">
-            <h2>
-              <label for="name-first">Last Name</label>
-              <input
-                type="text"
-                class="form-control disabledinput"
-                id="child-name-last"
-                name="name_last"
-                value="{{childInfo.last_name}}"
-              />
-            </h2>
-          </div>
-        </div>
-        <br />
-        <div class="form-group">
-          <label for="parent-email">Parent E-Mail:</label>
-          <input
-            type="text"
-            class="form-control disabledinput"
-            id="email"
-            name="parent_email"
-            value="{{childInfo.parent_email}}"
-          />
-          <br />
-          <label for="parentPhone">Parent's Phone Number:</label>
-          <input
-            type="tel"
-            class="form-control disabledinput"
-            id="parentPhone"
-            name="parent_phone"
-            value="{{childInfo.parent_phone}}"
-          />
-        </div>
-        <br />
-        <br />
+    <div class="col">
+      <form method="post" action="/api/child/">
+        <button action="submit" class="btn btn-sm" id="addChild">Add Child</button>
       </form>
     </div>
-		<div class="row">
-			<div class="col">
-				<form method="post" action="/api/child/">
-				<button action="submit" class="btn btn-sm" id="addChild">Add Child</button>
-				</form>
-			</div>
-		</div>
-    <br />
   </div>
-  <a href="/home">Go to Week View</a>
+  <br />
 </div>
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-></script>
+<a href="/home">Go to Week View</a>
+</div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    $("#addChild").onClick(
-        // add child to database
-        dbChild = {
-            first_name: $("#child-name-first").val(),
-            last_name: $("#child-name-last").val(),
-            parent_email: $("#email").val(),
-            parent_phone: $("#parentPhone").val()
-        }
-    )
+  $("#addChild").onClick(
+    // add child to database
+    dbChild = {
+      first_name: $("#child-name-first").val(),
+      last_name: $("#child-name-last").val(),
+      parent_email: $("#email").val(),
+      parent_phone: $("#parentPhone").val()
+    }
+  )
 </script>
 {{else}}
 <p>You must be logged In to look at the data.</p>

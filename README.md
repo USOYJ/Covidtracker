@@ -4,9 +4,9 @@
 Playcare is an interactive full stack application that allows daycare employees to to add, keep track, and schedule children for daycare services
 
 ## User Story
-AS A Daycare employee
-I WANT a Daycare application
-SO THAT I can add, keep track, and schedule children for daycare services
+* AS A Daycare employee
+* I WANT a Daycare application
+* SO THAT I can add, keep track, and schedule children for daycare services
 
 
 ## How to use

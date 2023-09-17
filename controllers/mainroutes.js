@@ -46,12 +46,12 @@ router.get('/search/:name', async function (req, res) {
   }
 });
 
-router.get('/childprofile/:id', async function (req, res) {
+router.get('/childProfile/:id', async function (req, res) {
   try {
     Child.findOne({
       where: { id: req.params.id }
     }).then(function (dbChild) {
-      res.render('childprofile', {
+      res.render('childProfile', {
         layout: 'main',
         loggedIn: req.session.loggedIn,
         console: console.log(dbChild),

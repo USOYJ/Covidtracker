@@ -33,7 +33,7 @@
     </form>
   </div>
   <div class="col">
-    <form method="post" action="/api/child/">
+    <form method="post" action="/api/child/newChild">
       <button type="submit" class="btn btn-sm" id="addChild">Add Child</button>
     </form>
   </div>
@@ -50,22 +50,6 @@
       parent_email: $("#email").val(),
       parent_phone: $("#parentPhone").val()
     };
-    
-    // You can send this `dbChild` object to your server API for adding the child
-    // Example:
-    $.ajax({
-      method: "POST",
-      url: "/api/child",
-      data: dbChild,
-      success: function(response) {
-        // Handle success response if needed
-        console.log("Child added successfully.");
-      },
-      error: function(error) {
-        // Handle error if needed
-        console.error("Failed to add child:", error);
-      }
-    });
   });
 </script>
 {{else}}

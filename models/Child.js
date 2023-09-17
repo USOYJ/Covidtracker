@@ -1,5 +1,6 @@
-const { Model, DataTypes, DATE } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const today = new Date();
 
 class Child extends Model { }
 
@@ -39,7 +40,7 @@ Child.init(
     },
     admission_date: {
       type: DataTypes.DATE,
-      defaultValue: DATE.NOW,
+      defaultValue: today,
       // Show only the date portion by MM/DD/YYYY
       get() {
         return this.getDataValue('admission_date').toLocaleDateString('en-US');

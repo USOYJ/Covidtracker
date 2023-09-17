@@ -31,17 +31,15 @@ router.get('/new', function (req, res) {
 });
 
 //add new child
-router.post('/', function (req, res) {
-  //console.log(req.body);
-  db.Child.create(req.body).then(function (dbChild) {
-    //console.log(dbChild);
-    //res.json(dbChild);
-    res.render('schedulechild', {
-      childid: dbChild.id,
-      pid: req.body.ParentId,
-      //change to parent email
+router.post('/newChild', function (req, res) {
+  db.Child.create(req.body)
+    .then(function (dbChild) {
+      res.json(dbChild);
+      res.redirect('/home');
+    })
+    .catch(function (err) {
+      res.json(err);
     });
-  });
 });
 
 router.post('/:id', function (req, res) {

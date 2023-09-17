@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 const sequelize = require('../config/connection');
 const { Child } = require('../models');
-
 const childData = require('./childData.json');
 
 const seedDatabase = async () => {
@@ -10,13 +10,6 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-
-  // Inserting the children data into the child table
-  for (const child of children) {
-    await Child.create({
-      ...child,
-    });
-  }
 
   process.exit(0);
 };

@@ -7,16 +7,7 @@ const searchBtn = document.getElementById('search-btn');
 searchBtn.addEventListener('click', function() {
   // Get the value of the input field with id="search-input"
   const searchInput = document.getElementById('search-input').value;
-  // Log the value of searchInput
-  console.log(searchInput);
   // Redirect to the search route with the value of searchInput
   window.location.replace('/search/' + searchInput);
-});
-
-
-// Child Profile page
-// Make edit button hidden when it's been clicked
-updateChild.addEventListener('click', function() {
-  fetch('/api/child/delete/:id');
 });
 

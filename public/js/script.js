@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define */
 
-const updateChild = document.getElementById('updateBtn');
 const searchBtn = document.getElementById('search-btn');
 
 // Listen to the button "search-btn" and get the value of the input field "search-input"

@@ -51,6 +51,7 @@ span {
 
 .login-container h1 {
   text-align: center;
+  background-color: black;
 }
 
 .login-form {
@@ -59,11 +60,10 @@ span {
 
 .form-group {
   margin-bottom: 15px;
+  background-color: black;
 }
 
 .form-group label {
-  background-color: black;
-  color: #fff;
   display: block;
   font-weight: bold;
 }

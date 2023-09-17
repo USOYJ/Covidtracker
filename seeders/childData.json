@@ -19,6 +19,28 @@
         "parent_email": "fionaaex@pmail.com",
         "parent_phone": "2019343743",
         "admission_date": "09-01-2022"
+    },
+    {
+        "first_name": "Ava",
+        "last_name": "Smith",
+        "parent_email": "jenjon@pmail.com",
+        "parent_phone": "2014443745",
+        "admission_date": "10-11-2022"
+    },
+    {
+        "first_name": "Liam",
+        "last_name": "Williams",
+        "parent_email": "liwill@pmail.com",
+        "parent_phone": "2019345401",
+        "admission_date": "10-11-2022"
+    },
+    {
+        "first_name": "Olivia",
+        "last_name": "Brown",
+        "parent_email": "olibro@pmail.com",
+        "parent_phone": "2019343093",
+        "admission_date": "10-11-2022"
     }
+
     
 ]

@@ -45,6 +45,11 @@ Playcare is an interactive full stack application that allows daycare employees 
 <p>Welcome to Playcare! click the <a href="https://mysterious-anchorage-56643-889ec0494a37.herokuapp.com/">link</a> it redirects you to the Playcare app, dont forget to register you child!</p>
 
 ## Screenshots:
+<img width="1436" alt="Screenshot 2023-09-17 at 3 22 19 PM" src="https://github.com/USOYJ/playcare/assets/125850331/f209e5e0-be0d-4db4-8c65-5dbc9b1cb8fd">
+
+<img width="1435" alt="Screenshot 2023-09-17 at 5 06 06 PM" src="https://github.com/USOYJ/playcare/assets/125850331/020eb617-6d6b-4216-8d50-26a588bf8af2">
+
+<img width="722" alt="Screenshot 2023-09-17 at 5 06 27 PM" src="https://github.com/USOYJ/playcare/assets/125850331/f9afb732-0aed-42d8-8359-e8aed18928ae">
 
 
 

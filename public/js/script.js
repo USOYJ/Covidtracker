@@ -1,18 +1,12 @@
 /* eslint-disable no-use-before-define */
 
-const updateChild = document.getElementById('updateBtn');
-const AddChild = document.getElementById('add-Child-Btn');
+const searchBtn = document.getElementById('search-btn');
 
-// Make edit button hidden when it's been clicked
-updateChild.addEventListener('click', function() {
-  fetch('/api/child/delete/:id');
+// Listen to the button "search-btn" and get the value of the input field "search-input"
+searchBtn.addEventListener('click', function() {
+  // Get the value of the input field with id="search-input"
+  const searchInput = document.getElementById('search-input').value;
+  // Redirect to the search route with the value of searchInput
+  window.location.replace('/search/' + searchInput);
 });
 
-// Make Add Child button to the new child form
-AddChild.addEventListener('click', function() {
-  href('/newChild');
-});
-
-// function showChildProfile(id) {
-//   reload('/childprofile/' + id);
-// }

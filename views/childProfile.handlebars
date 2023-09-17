@@ -1,3 +1,6 @@
+<header>
+  <h1>Play<span>Care</span></h1>
+</header>
 {{#if loggedIn}}
 <div class="container">
   <div class="row mt-4">
@@ -12,91 +15,65 @@
           <div class="form-group col-md-6">
             <h2>
               <label for="name-first">First Name</label>
-              <input
-                type="text"
-                class="form-control disabledinput"
-                id="child-name-first"
-                name="name_first"
-                value="{{child.first_name}}"
-                disabled
-              />
+              <input type="text" class="form-control disabledinput" id="child-name-first" name="name_first"
+                value="{{child.first_name}}" disabled />
             </h2>
           </div>
           <div class="form-group col-md-6">
             <h2>
               <label for="name-first">Last Name</label>
-              <input
-                type="text"
-                class="form-control disabledinput"
-                id="child-name-last"
-                name="name_last"
-                value="{{child.last_name}}"
-                disabled
-              />
+              <input type="text" class="form-control disabledinput" id="child-name-last" name="name_last"
+                value="{{child.last_name}}" disabled />
             </h2>
           </div>
         </div>
         <br />
         <div class="form-group">
           <label for="parent-email">Parent E-Mail:</label>
-          <input
-            type="text"
-            class="form-control disabledinput"
-            id="email"
-            name="parent_email"
-            value="{{child.parent_email}}"
-            disabled
-          />
+          <input type="text" class="form-control disabledinput" id="email" name="parent_email"
+            value="{{child.parent_email}}" disabled />
           <br />
           <label for="parentPhone">Parent's Phone Number:</label>
-          <input
-            type="tel"
-            class="form-control disabledinput"
-            id="parentPhone"
-            name="parent_phone"
-            value="{{child.parent_phone}}"
-            disabled
-          />
+          <input type="tel" class="form-control disabledinput" id="parentPhone" name="parent_phone"
+            value="{{child.parent_phone}}" disabled />
         </div>
         <br />
         <br />
         {{!-- <button class="btn btn-success" type="submit">Update Child</button> --}}
       </form>
       <div id="updateChild">
-      <button id="edit" class="btn btn-primary">Edit Child</button>
+        <button id="edit" class="btn btn-primary">Edit Child</button>
       </div>
     </div>
-		<div class="row">
-			<div class="col">
-				<form method="post" action="/api/child/del/{{child.id}}">
-				<button action="submit" class="btn btn-danger btn-sm" id="deleteChild">Delete Child</button>
-				</form>
-			</div>
-		</div>
+    <div class="row">
+      <div class="col">
+        <form method="post" action="/api/child/delete/{{child.id}}"> 
+          <button action="submit" class="btn btn-danger btn-sm" id="deleteChild">Delete Child</button>
+        </form>
+      </div>
+    </div>
     <br />
   </div>
   <a href="/home">Go to Week View</a>
 </div>
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
-></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
   //edit child btn make form editable
-  $('#edit').click(function() {
+  $('#edit').click(function () {
     console.log('editing');
     $('#edit').hide();
     console.log('hidden');
     $('#updateChild').append(
       $('<button>')
-        .attr({type: 'submit', class: 'btn btn-success', id: 'updatebtn'})
+        .attr({ type: 'submit', class: 'btn btn-success', id: 'updatebtn' })
         .text('Update Child')
     );
-    $('.disabledinput').each(function(thing) {
+    $('.disabledinput').each(function (thing) {
       $(this).prop('disabled', false);
     });
   });
 </script>
+{{!-- <script type="text/javascript" src="../js/script.js"></script> --}}
 {{else}}
 <p>You must be logged In to look at the data.</p>
 <a href="/">Login</a>

@@ -55,13 +55,13 @@ router.post('/:id', function (req, res) {
 });
 
 // delete child
-router.delete('delete/:id', function (req, res) {
+router.post('/delete/:id', function (req, res) {
   db.Child.destroy({
     where: {
       id: req.params.id,
     },
-  }).then(function (dbChild) {
-    res.json(dbChild);
+  }).then(function () {
+    res.redirect('/home');
   });
 });
 

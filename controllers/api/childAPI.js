@@ -32,9 +32,14 @@ router.get('/new', function (req, res) {
 
 //add new child
 router.post('/newChild', function (req, res) {
-  db.Child.create(req.body)
-    .then(function (dbChild) {
-      res.json(dbChild);
+  db.Child.create({
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    parent_email: req.body.parent_email,
+    parent_phone: req.body.parent_phone,
+  })
+    .then(function () {
+      //res.json(dbChild);
       res.redirect('/home');
     })
     .catch(function (err) {

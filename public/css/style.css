@@ -1,26 +1,4 @@
-main {
-  width: 50%;
-  margin: 50px auto;
-  text-align: center;
-}
-
-table {
-  margin: 50px auto;
-}
-
-table,
-th,
-td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: 5px;
-  
-}
-
+/* Centered content with a background image */
 body {
   font-family: 'Leckerli One', cursive;
   margin: 0;
@@ -37,16 +15,47 @@ body {
   height: 100vh;
 }
 
-span {
-  color: orange
+/* Main content container */
+.main {
+  width: 80%;
+  max-width: 800px; /* Adjust the maximum width as needed */
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Styled table */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+/* Form styles */
 .login-container {
   background-color: #fff;
   border-radius: 8px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
   padding: 20px;
   width: 350px;
+  margin: 20px auto;
 }
 
 .login-container h1 {
@@ -69,7 +78,7 @@ span {
 
 .form-group input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -78,6 +87,10 @@ span {
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 .form-group input[type="submit"]:hover {

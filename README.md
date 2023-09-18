@@ -51,6 +51,7 @@ Playcare is an interactive full stack application that allows daycare employees 
 
 <img width="722" alt="Screenshot 2023-09-17 at 5 06 27 PM" src="https://github.com/USOYJ/playcare/assets/125850331/f9afb732-0aed-42d8-8359-e8aed18928ae">
 
+<img width="1415" alt="Screenshot 2023-09-17 at 8 51 19 PM" src="https://github.com/USOYJ/playcare/assets/125850331/6ab716a0-4f6e-47eb-8ba2-6769b1efba4d">
 
 
 

@@ -10,3 +10,9 @@ searchBtn.addEventListener('click', function() {
   window.location.replace('/search/' + searchInput);
 });
 
+// Listen to the button by id "addChildButton and redirect to the route "/addChild"
+const addChildButton = document.getElementById('addChildButton');
+addChildButton.addEventListener('click', function() {
+  window.location.replace('./newChild');
+});
+

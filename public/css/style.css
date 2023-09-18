@@ -48,6 +48,10 @@ td {
   padding: 10px;
 }
 
+form {
+  background-color: white;
+}
+
 /* Form styles */
 .login-container {
   background-color: #fff;
@@ -77,7 +81,7 @@ td {
 }
 
 .form-group input {
-  width: 100%;
+  width: 60%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;

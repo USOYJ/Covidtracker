@@ -57,6 +57,7 @@
   <a href="/home">Go to Week View</a>
 </div>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/editchild.js"></script>
 <script>
   //edit child btn make form editable
   $('#edit').click(function () {
@@ -66,7 +67,7 @@
     $('#updateChild').append(
       $('<button>')
         .attr({ type: 'submit', class: 'btn btn-success', id: 'updatebtn' })
-        .text('Update Child')
+        .text('Update Child').click(updateChild)
     );
     $('.disabledinput').each(function (thing) {
       $(this).prop('disabled', false);

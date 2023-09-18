@@ -47,7 +47,7 @@ router.post('/newChild', function (req, res) {
     });
 });
 
-router.post('/:id', function (req, res) {
+router.put('/:id', function (req, res) {
   db.Child.update(req.body, { where: { id: req.params.id } })
     .then(function (dbChild) {
       res.json(dbChild);

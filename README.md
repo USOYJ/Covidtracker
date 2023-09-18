@@ -42,7 +42,7 @@ Playcare is an interactive full stack application that allows daycare employees 
 * THEN user is log out to the sign in page
 
 ## Deployed Application:
-<p>Welcome to Playcare! click the <a href="https://mysterious-anchorage-56643-889ec0494a37.herokuapp.com/">link</a> it redirects you to the Playcare app, dont forget to register you child!</p>
+<p>Welcome to Playcare! click the <a href="https://mysterious-anchorage-56643-889ec0494a37.herokuapp.com/">link</a> it redirects you to the Playcare app, don't forget to register your child!</p>
 
 ## Screenshots:
 <img width="1436" alt="Screenshot 2023-09-17 at 3 22 19 PM" src="https://github.com/USOYJ/playcare/assets/125850331/f209e5e0-be0d-4db4-8c65-5dbc9b1cb8fd">

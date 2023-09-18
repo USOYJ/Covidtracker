@@ -1,3 +1,4 @@
+/* eslint-disable */
 const updateChild = async () => {
   try {
     const child_id = window.location.toString().split('/').pop();
@@ -52,21 +53,4 @@ const deleteChildFormHandler = async (child_id) => {
 document.addEventListener('DOMContentLoaded', () => {
   const updateChildButton = document.querySelector('#updatebtn');
   const deleteChildButton = document.querySelector('#delete-child');
-
-  // if (updateChildButton) {
-  //   updateChildButton.addEventListener('click', async (event) => {
-  //     event.preventDefault();
-  //     if (first_name && last_name && parent_email && parent_phone) {
-  //       await updateChild(child_id, first_name, last_name, parent_email, parent_phone);
-  //     }
-  //   });
-  // }
-
-  // if (deleteChildButton) {
-  //   deleteChildButton.addEventListener('click', async (event) => {
-  //     event.preventDefault();
-  //     const child_id = window.location.toString().split('/').pop();
-  //     await deleteChildFormHandler(child_id);
-  //   });
-  // }
 });
